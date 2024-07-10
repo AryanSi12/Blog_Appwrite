@@ -9,9 +9,7 @@ export default defineConfig({
     
     rollupOptions: {
       external: ['react-router-dom','react-redux'],
-      input: {
-        main: 'index.html'
-      },
+      
     },
   },
 })
