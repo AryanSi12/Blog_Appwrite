@@ -2,7 +2,7 @@
   "name": "11major-project",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
+  "type": "type/javascript",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
