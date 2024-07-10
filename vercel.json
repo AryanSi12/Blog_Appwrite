@@ -1,4 +1,4 @@
-{
+/*{
   "builds": [
     {
       "src": "package.json",
@@ -12,3 +12,4 @@
     { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
+*/
