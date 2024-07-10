@@ -11,9 +11,12 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist', 
+    assetsDir: 'assets',
     rollupOptions: {
       external: ['react-router-dom','react-redux'],
-      
+      input: {
+        main: 'index.html'
+      },
     },
   },
 })
