@@ -13,14 +13,14 @@ function Login() {
     const navigate=useNavigate()
     const {register,handleSubmit}=useForm()
     const [error,setError]=useState("")
-    const signin=async(data)=>{
+    const signin=async(Data)=>{
         try{
-            const session=await authservice.login(data);
+            const session=await authservice.login(Data);
             if(session){
-                const Data=authservice.getCurrentUser()
-                if(Data){
-                    dispatch(storeLogin(Data));
-                    console.log(Data);
+                const data=await authservice.getCurrentUser()
+                if(data){
+                    console.log(data);
+                    dispatch(storeLogin(data));
                     navigate('/')
                 }
             }
@@ -30,14 +30,14 @@ function Login() {
         }
     }
   return (
-    <div className="min-h-screen flex items-start justify-center py-12 bg-gradient-to-b from-blue-200 to-blue-300">
+    <div className="min-h-screen flex items-start justify-center py-12 bg-gradient-to-r from-teal-100 to-blue-100">
       <div className="w-full max-w-lg bg-white rounded-xl p-8 shadow-lg border border-gray-300">
         <div className="mb-6 flex justify-center">
                     <span className="inline-block w-full max-w-[100px]">
                         <Logo width="100%" />
                     </span>
         </div>
-        <h2 className="text-center text-2xl font-bold leading-tight">Sign in to your account</h2>
+        <h2 className="text-center text-2xl font-bold leading-tight">Log in to your account</h2>
         <p className="mt-2 text-center text-base text-black/60">
                     Don&apos;t have any account?&nbsp;
                     <Link
@@ -72,8 +72,8 @@ function Login() {
                 />
                 <Button
                 type="submit"
-                className="w-full"
-                >Sign in</Button>
+                className="w-full  bg-teal-600 hover:bg-teal-500 rounded-full transition duration-200"
+                >Log in</Button>
             </div>
         </form>
     </div>

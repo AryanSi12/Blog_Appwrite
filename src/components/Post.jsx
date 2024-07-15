@@ -39,7 +39,7 @@ function Post() {
 
     return post ? (
         
-        <div className="min-h-screen bg-blue-200">
+        <div className="min-h-screen bg-gradient-to-r from-teal-100 to-blue-100">
             <Container>
                 <div className="py-8">
                     <div className="w-full flex justify-center mb-4 relative border rounded-xl overflow-hidden">

@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 function PostForm({post}) {
     const navigate=useNavigate();
-    const Data=useSelector((state)=>state.auth.data)
+    const Data=useSelector((state)=>state.auth.data);
     const {register,handleSubmit,watch,setValue,control,getValues}=useForm({
         defaultValues: {
             title: post?.title || " ",
@@ -16,6 +16,7 @@ function PostForm({post}) {
         },
     });
     const submit=async (userData)=>{
+        console.log(userData);
     if(post){
         const file=userData.image[0] ? await service.uploadFiles(userData.image[0]):null;
         if(file){
@@ -34,7 +35,7 @@ function PostForm({post}) {
         if(file){
             const fileId = file.$id;
                 userData.Image = fileId;
-                //console.log(userData.title);
+                console.log(Data);
             const dbPost = await service.createPost({ UserId: Data.$id,...userData  });
             if (dbPost) {
                 navigate(`/post/${dbPost.$id}`);
@@ -67,8 +68,9 @@ useEffect(()=>{
 },[watch,slugTransform,setValue])
 
   return (
-    <form onSubmit={handleSubmit(submit)} className="flex flex-wrap">
-    <div className="w-2/3 px-2">
+    
+    <form onSubmit={handleSubmit(submit)} className="flex flex-wrap ">
+    <div className="w-2/3 px-2 ">
         <Input
             label="Title :"
             placeholder="Title"

@@ -28,7 +28,7 @@ function Signup() {
     }
 
   return (
-    <div className="min-h-screen flex items-start justify-center py-12 bg-gradient-to-b from-blue-200 to-blue-300">
+    <div className="min-h-screen flex items-start justify-center py-12 bg-gradient-to-r from-teal-100 to-blue-100">
     <div className="w-full max-w-lg bg-white rounded-xl p-8 shadow-lg border border-gray-300">
       <div className="mb-6 flex justify-center">
                     <span className="inline-block w-full max-w-[100px]">
@@ -75,7 +75,7 @@ function Signup() {
                         {...register("password", {
                             required: true,})}
                         />
-                        <Button type="submit" className="w-full">
+                        <Button type="submit" className="w-full  bg-teal-600 hover:bg-teal-500 rounded-full transition duration-200">
                             Create Account
                         </Button>
                     </div>

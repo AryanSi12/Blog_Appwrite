@@ -32,7 +32,7 @@ export class Service{
         }
     }
 
-    async updatePost(slug,{title,Image,status,content})
+    async updatePost(slug,{title,Image,status,content,Likes,Dislikes,LikedBy,DislikedBy})
     {
         try{
             return await this.database.updateDocument(
@@ -44,6 +44,10 @@ export class Service{
                     Image,
                     status,
                     content,
+                    Likes,
+                    Dislikes,
+                    LikedBy,
+                    DislikedBy,
                 }
             )
         }

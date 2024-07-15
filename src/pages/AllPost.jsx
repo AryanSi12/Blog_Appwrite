@@ -12,15 +12,16 @@ function AllPost() {
     service.getPosts([]).then((posts) => {
       if (posts) {
         setPosts(posts.documents);
+        console.log(posts);
       }
     });
   }, [slug]);
 
   return (
-    <div className='min-h-screen w-full p-3 bg-gradient-to-b from-blue-200 to-blue-300'>
-        <h1 className="text-3xl text-center font-bold text-gray-900 mb-3  p-3">ALL POSTS</h1>
+    <div className='min-h-screen w-full p-3 bg-gradient-to-r from-teal-100 to-blue-100'>
+        
       <Container>
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
+        <div className='grid pt-6 grid-cols-1 md:grid-cols-3 gap-8'>
           {posts.map((post) => (
             <div key={post.$id} className='w-full'>
               <PostCard {...post} />

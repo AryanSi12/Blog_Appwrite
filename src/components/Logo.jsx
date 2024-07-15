@@ -1,8 +1,11 @@
-import React from 'react'
-function Logo({width = '100px'}) {
+import React from 'react';
+
+function Logo() {
   return (
-    <img src="2.jpeg" className=' max-h-14 max-w-14' alt="" />
-  )
+    <div className="text-3xl font-bold ">
+      Bloggerrr
+    </div>
+  );
 }
 
-export default Logo
+export default Logo;

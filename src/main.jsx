@@ -8,6 +8,8 @@ import { RouterProvider } from 'react-router-dom'
 import './index.css'
 
 //Import pages
+import AboutUs from './components/Aboutus.jsx'
+import MyAcc from './components/MyAcc.jsx'
 import SignupPage from './pages/SignupPage.jsx'
 import LoginPage from './pages/LoginPage.jsx'
 import HomePage from './pages/HomePage.jsx'
@@ -32,8 +34,16 @@ const router = createBrowserRouter([
       element:<SignupPage/>
     },
     {
+      path:"/account",
+      element:<MyAcc/>
+    },
+    {
       path:"/add-post",
       element:<Addpost/>
+    },
+    {
+      path:"/About",
+      element:<AboutUs/>
     },
     {
       path:"/all-posts",
